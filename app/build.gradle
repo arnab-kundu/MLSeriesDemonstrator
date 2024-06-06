@@ -3,22 +3,18 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.3"
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.mlseriesdemonstrator"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    aaptOptions {
-        noCompress "tflite"
-    }
 
     buildTypes {
         release {
@@ -32,6 +28,10 @@ android {
     }
     buildFeatures {
         mlModelBinding true
+    }
+    namespace 'com.example.mlseriesdemonstrator'
+    androidResources {
+        noCompress 'tflite'
     }
 }
 
